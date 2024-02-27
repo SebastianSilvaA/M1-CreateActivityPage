@@ -1,0 +1,100 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+}
+body {
+    background-color: var(--grisClaro);
+}
+h2{
+    font-family: sans-serif;
+}
+h3{
+    font-family: sans-serif;
+}
+header {
+    color: var(--oscuro);
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primario);
+    font-family: sans-serif;
+    
+}
+ 
+span {
+    font-size: 1rem;
+    color: var(--gris);
+
+    
+}
+
+.titulo1 {
+    background-image: url(IMG/hero.jpg);
+    position: relative;
+    background-repeat: cover;
+    padding: 2rem;
+}
+.sobre {
+    text-align: left;
+    font-size: 2rem;
+}
+
+.titulo2 {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 1rem;
+
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    
+    
+}
+
+
+
+.imagenes {
+
+    border: solid var(--primario);
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin: 10px;
+   overflow: hidden;
+   
+   
+   
+}
+
+
+.formulario {
+    background-color: var(--gris);
+    width: min( 60rem, 100% ); /** Utilizar el valor más pequeño **/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+.titulo3 {
+    text-align: center;
+    margin: 5rem;
+    
+    
+}
