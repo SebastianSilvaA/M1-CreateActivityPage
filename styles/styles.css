@@ -32,7 +32,7 @@ span {
 }
 
 .titulo1 {
-    background-image: url(IMG/hero.jpg);
+    
     position: relative;
     background-repeat: cover;
     padding: 2rem;
@@ -46,6 +46,12 @@ span {
     text-align: center;
     padding: 2rem;
     margin-bottom: 1rem;
+    background-color: #0097A7;
+    border-radius: 1rem;
+    width: 60rem;
+    margin: auto;
+    
+    
 
 }
 
@@ -74,7 +80,7 @@ span {
 
 .formulario {
     background-color: var(--gris);
-    width: min( 60rem, 100% ); /** Utilizar el valor más pequeño **/
+    width: min( 60rem, 100% );
     margin: 0 auto;
     padding: 2rem;
     border-radius: 1rem;
@@ -94,7 +100,12 @@ span {
 
 .titulo3 {
     text-align: center;
-    margin: 5rem;
+    padding: 2rem;
+    background-color: #0097A7;
+    border-radius: 1rem;
+    width: 60rem;
+    margin: auto;
+    margin-bottom: 4rem;
     
     
 }
