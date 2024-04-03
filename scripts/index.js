@@ -10,24 +10,36 @@ class Activity{
 class Repository{
     constructor(){
         this.activities = [];
+        this.id = 0
 
     }
     getAllActivities() {
         return this.activities
 
     }
-    createActivity() {
-        return this.activities.push(Activity)
+    createActivity(tittle, description, imgUrl) {
+        this.id++;
+        const activity = new Activity(this.id, tittle, description, imgUrl)
+        return this.activities.push(activity)
     }
     
     deleteActivity (id) {
-        this.activities = this.activities.filter(Activity => Activity.id !== id);
-           
+        this.activities = this.activities.filter((Activity) => Activity.id !== id);
+           return this.activities
     }
+
     
 }
 
-console.log('aguante la torta')
+const actividad = new Repository()
+
+
+actividad.createActivity('Kungfu', 'es bueno para la salud', 'https')
+
+actividad.createActivity('chopi', 'joder', 'https')
+
+actividad.deleteActivity(1)
 
 
 
+console.log(actividad.getAllActivities())
