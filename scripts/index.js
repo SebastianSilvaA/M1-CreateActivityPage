@@ -20,13 +20,14 @@ class Repository{
         return this.activities.push(Activity)
     }
     
+    deleteActivity (id) {
+        this.activities = this.activities.filter(Activity => Activity.id !== id);
+           
+    }
     
 }
-const repo = new Repository()
 
-const pedro = new Activity (1,'yoga','esta re chetuki','mamaegg')
+console.log('aguante la torta')
 
-Repository.createActivity(pedro)
 
-Repository.getAllActivities()
 
