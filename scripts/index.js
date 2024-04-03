@@ -31,15 +31,70 @@ class Repository{
     
 }
 
-const actividad = new Repository()
+const instancia = new Repository();
 
+function instance(activity){
+    const {tittle, description, imgUrl} = activity;
 
-actividad.createActivity('Kungfu', 'es bueno para la salud', 'https')
+    const titulo = document.createElement('h3');
+    const descripcion = document.createElement('p');
+    const img = document.createElement('img');
 
-actividad.createActivity('chopi', 'joder', 'https')
+    titulo.innerText = tittle;
+    titulo.classList.add('titutlo-card')
+    descripcion.innerText = description;
+    descripcion.classList.add('descripcion-card')
+    img.src = imgUrl;
+    img.classList.add('img-card')
 
-actividad.deleteActivity(1)
+    const contenedor = document.createElement('div')
+    contenedor.appendChild(titulo);
+    contenedor.appendChild(descripcion)
+    contenedor.appendChild(img)
+    contenedor.classList.add('card-container')
 
+    return contenedor;
+}
 
+function convertirHtml() {
+    const contenedorAct = document.querySelector('.contenedor-actividades')
 
-console.log(actividad.getAllActivities())
+    contenedorAct.innerHTML = ''
+
+    const listado = instancia.getAllActivities();
+
+    const mapear = listado.map(instance)
+
+    mapear.forEach(element => {
+        contenedorAct.appendChild(element)
+    });
+}
+
+function handler() {
+    
+    const inputitulo = document.getElementById('tittleinput')
+    const descripcioninput = document.getElementById('descripcioninput')
+    const inputimg = document.getElementById('imginput')
+    
+    const valorTitulo = inputitulo.value;
+    const valorDescripcion = descripcioninput.value;
+    const valorImg = inputimg.value;
+    
+    
+    if(!valorTitulo || !valorDescripcion || !valorImg) {
+        alert('rellene el formulario')
+        return;
+    }
+    
+    instancia.createActivity(valorTitulo, valorDescripcion, valorImg);
+
+    convertirHtml();
+
+}
+
+const boton = document.getElementById('boton')
+boton.addEventListener('click', (event) => {
+    event.preventDefault();
+    handler();
+})
+
