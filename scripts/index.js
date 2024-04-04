@@ -41,11 +41,11 @@ function instance(activity){
     const img = document.createElement('img');
 
     titulo.innerText = tittle;
-    titulo.classList.add('titutlo-card')
+    titulo.classList.add('titulo-cards')
     descripcion.innerText = description;
-    descripcion.classList.add('descripcion-card')
+    descripcion.classList.add('descripcion-cards')
     img.src = imgUrl;
-    img.classList.add('img-card')
+    img.classList.add('img-cards')
 
     const contenedor = document.createElement('div')
     contenedor.appendChild(titulo);
