@@ -33,25 +33,33 @@ class Repository{
 
 const instancia = new Repository();
 
-function instance(activity){
-    const {tittle, description, imgUrl} = activity;
+function instance(activity) {
+    const { id, tittle, description, imgUrl } = activity;
 
     const titulo = document.createElement('h3');
     const descripcion = document.createElement('p');
     const img = document.createElement('img');
 
     titulo.innerText = tittle;
-    titulo.classList.add('titulo-cards')
+    titulo.classList.add('titulo-cards');
     descripcion.innerText = description;
-    descripcion.classList.add('descripcion-cards')
+    descripcion.classList.add('descripcion-cards');
     img.src = imgUrl;
-    img.classList.add('img-cards')
+    img.classList.add('img-cards');
 
-    const contenedor = document.createElement('div')
+    const contenedor = document.createElement('div');
     contenedor.appendChild(titulo);
-    contenedor.appendChild(descripcion)
-    contenedor.appendChild(img)
-    contenedor.classList.add('card-container')
+    contenedor.appendChild(descripcion);
+    contenedor.appendChild(img);
+    contenedor.classList.add('card-container');
+
+    
+    contenedor.addEventListener('click', () => {
+        
+        instancia.activities = instancia.activities.filter(act => act.id !== id);
+        
+        convertirHtml();
+    });
 
     return contenedor;
 }
