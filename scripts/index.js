@@ -1,4 +1,4 @@
-class Activity{
+class Activityy{
     constructor(id,tittle,description,imgUrl){
         this.id = id;
         this.tittle = tittle;
@@ -19,7 +19,7 @@ class Repository{
     }
     createActivity(tittle, description, imgUrl) {
         this.id++;
-        const activity = new Activity(this.id, tittle, description, imgUrl)
+        const activity = new Activityy(this.id, tittle, description, imgUrl)
         return this.activities.push(activity)
     }
     
